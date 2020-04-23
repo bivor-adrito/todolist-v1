@@ -7,5 +7,22 @@
 </head>
 <body>
     <p>Today is <%=kindOfDay%> </p>
+
+    <ul>
+        <li>Buy Food</li>
+        <li>Cook Food</li>
+        <li>Eat Food</li>
+        
+        <!-- //for loop -->
+        <% for( let index = 0; index < newListItem.length; index++ ) { %>
+            <li><%= newListItem[index] %> </li>
+        <% } %>
+
+    </ul>
+
+    <form action="/" method="post">
+        <input type="text" name="newItem" >
+        <button type="submit">Add</button>
+    </form>
 </body>
 </html>
