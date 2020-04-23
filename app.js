@@ -11,9 +11,12 @@ var items = [];
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
  
+
 app.get('/', function (req, res) {
+
 
     var today = new Date(); // this is a js Date constructor which i had put in a var to create an object see MDN js Date() docs to learn more;
     var options = {
@@ -26,7 +29,7 @@ app.get('/', function (req, res) {
     var day = today.toLocaleDateString("en-US", options);
 
    
-    res.render('list', {kindOfDay: day, newListItem: items});
+    res.render('list', {kindOfDay: day, newListItems: items});
 
   //res.send('Hello World');
 });
